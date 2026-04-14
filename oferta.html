@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descobrindo o Porquê da Fé</title>
+  <meta
+    name="description"
+    content="Série digital para ajudar crianças de 8 a 14 anos a desenvolver uma fé sólida, consciente e aplicada à vida real."
+  />
+  <style>
+    :root{
+      --bg:#eef1f3;
+      --white:#ffffff;
+      --text:#0f1115;
+      --muted:#69717f;
+      --line:#d7dce2;
+      --blue-900:#040d1b;
+      --blue-800:#0b1a34;
+      --blue-700:#16376a;
+      --blue:#1f39ff;
+      --green:#3dbd72;
+      --green-dark:#1c9a51;
+      --red:#e10800;
+      --orange:#f5660a;
+      --shadow:0 18px 45px rgba(0,0,0,.10);
+      --radius:26px;
+      --container:1180px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter, Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .container{
+      width:min(100% - 32px, var(--container));
+      margin-inline:auto;
+    }
+
+    .topbar{
+      background:var(--red);
+      color:#fff;
+      text-align:center;
+      padding:12px 10px;
+      font-weight:800;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+
+    .hero{
+      background:
+        radial-gradient(circle at 76% 12%, rgba(38,84,255,.18), transparent 24%),
+        linear-gradient(90deg, #020812 0%, #0f1f40 56%, #203b71 100%);
+      color:#fff;
+      padding:72px 0 62px;
+      overflow:hidden;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      gap:42px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:#eef2ff;
+      color:#2d47ff;
+      border:2px solid rgba(61,88,255,.22);
+      padding:10px 18px;
+      border-radius:999px;
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:22px;
+    }
+
+    .hero h1{
+      font-size:68px;
+      line-height:.96;
+      letter-spacing:-2.2px;
+      margin:0 0 24px;
+      font-weight:900;
+      max-width:760px;
+    }
+
+    .hero p.lead{
+      margin:0 0 28px;
+      font-size:23px;
+      line-height:1.45;
+      color:#edf2ff;
+      max-width:760px;
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:74px;
+      padding:18px 34px;
+      background:var(--orange);
+      color:#fff;
+      border-radius:8px;
+      font-weight:900;
+      font-size:20px;
+      text-align:center;
+      box-shadow:0 12px 24px rgba(245,100,11,.22);
+      transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
+      border:none;
+      cursor:pointer;
+      animation:pulseCTA 1.9s ease-in-out infinite;
+      transform-origin:center;
+      will-change:transform, box-shadow;
+    }
+
+    .cta:hover{
+      filter:brightness(1.03);
+    }
+
+    .cta.green{
+      background:var(--green);
+      box-shadow:0 12px 24px rgba(57,184,107,.18);
+    }
+
+    .cta.small{
+      min-height:58px;
+      padding:14px 22px;
+      font-size:18px;
+      width:100%;
+    }
+
+    @keyframes pulseCTA{
+      0%{
+        transform:scale(1);
+        box-shadow:0 12px 24px rgba(245,100,11,.22);
+      }
+      50%{
+        transform:scale(1.03);
+        box-shadow:0 0 0 10px rgba(245,100,11,.08), 0 14px 26px rgba(245,100,11,.28);
+      }
+      100%{
+        transform:scale(1);
+        box-shadow:0 12px 24px rgba(245,100,11,.22);
+      }
+    }
+
+    .cta.green{
+      animation:pulseCTAGreen 1.9s ease-in-out infinite;
+    }
+
+    @keyframes pulseCTAGreen{
+      0%{
+        transform:scale(1);
+        box-shadow:0 12px 24px rgba(57,184,107,.18);
+      }
+      50%{
+        transform:scale(1.03);
+        box-shadow:0 0 0 10px rgba(57,184,107,.08), 0 14px 28px rgba(57,184,107,.24);
+      }
+      100%{
+        transform:scale(1);
+        box-shadow:0 12px 24px rgba(57,184,107,.18);
+      }
+    }
+
+    .hero-note{
+      margin-top:18px;
+      color:#dbe2ef;
+      font-size:16px;
+      font-weight:600;
+    }
+
+    .social-proof{
+      margin-top:30px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .avatars{
+      display:flex;
+      align-items:center;
+    }
+
+    .avatar{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:3px solid #15284c;
+      margin-left:-10px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+    }
+
+    .avatar:first-child{
+      margin-left:0;
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .social-proof strong{
+      display:block;
+      font-size:18px;
+      color:#fff;
+    }
+
+    .hero-media-card{
+      background:#f7f7f8;
+      border-radius:26px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-media-card img{
+      width:100%;
+      border-radius:20px;
+      object-fit:contain;
+    }
+
+    .section{
+      padding:78px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:66px;
+      line-height:1.02;
+      letter-spacing:-2px;
+      font-weight:900;
+      margin:0 auto 18px;
+      max-width:1140px;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:22px;
+      max-width:900px;
+      margin:0 auto;
+      line-height:1.5;
+    }
+
+    .blue-word{
+      color:var(--blue);
+    }
+
+    .preview-wrap{
+      margin-top:52px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .preview-image{
+      width:min(100%, 1040px);
+      filter:drop-shadow(0 26px 26px rgba(0,0,0,.16));
+      border-radius:22px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      margin-top:44px;
+    }
+
+    .feature-card{
+      background:#f3f4f4;
+      padding:32px 30px;
+      min-height:230px;
+      border:1px solid rgba(0,0,0,.02);
+    }
+
+    .feature-icon{
+      width:90px;
+      height:90px;
+      display:grid;
+      place-items:center;
+      font-size:58px;
+      margin-bottom:22px;
+    }
+
+    .feature-card h4{
+      margin:0;
+      font-size:24px;
+      line-height:1.42;
+      color:#7a838f;
+      font-weight:500;
+      max-width:420px;
+    }
+
+    .simple-center{
+      text-align:center;
+      color:#6f7784;
+      margin:42px auto 0;
+      font-size:20px;
+    }
+
+    .count-strip{
+      background:#dd0601;
+      color:#fff;
+      padding:18px 0;
+      margin-top:56px;
+    }
+
+    .count-inner{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .count-text{
+      font-size:34px;
+      font-weight:800;
+      text-align:center;
+      letter-spacing:.4px;
+    }
+
+    .count-boxes{
+      display:flex;
+      gap:18px;
+      align-items:flex-end;
+    }
+
+    .count-box{
+      text-align:center;
+      min-width:88px;
+    }
+
+    .count-box strong{
+      display:block;
+      font-size:60px;
+      line-height:.9;
+      font-weight:900;
+    }
+
+    .count-box span{
+      font-size:16px;
+      font-weight:700;
+      opacity:.95;
+    }
+
+    .cta-panel{
+      max-width:880px;
+      margin:40px auto 0;
+      background:#f7f7f7;
+      border-radius:34px;
+      padding:52px 28px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.03);
+    }
+
+    .cta-panel h3{
+      margin:0 0 26px;
+      font-size:62px;
+      line-height:1.03;
+      letter-spacing:-2px;
+      font-weight:900;
+    }
+
+    .list-ideal{
+      max-width:560px;
+      margin:36px auto 0;
+      display:grid;
+      gap:18px;
+    }
+
+    .check-item{
+      background:#eaf1ea;
+      border:1px solid #c5d3c5;
+      border-radius:22px;
+      min-height:110px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:18px 24px;
+      font-size:23px;
+      font-weight:700;
+    }
+
+    .check-icon{
+      flex:0 0 50px;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:#d5f1d2;
+      display:grid;
+      place-items:center;
+      font-size:28px;
+      color:#10a64a;
+    }
+
+    .steps-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+      margin-top:46px;
+    }
+
+    .step{
+      text-align:center;
+      padding:14px;
+    }
+
+    .step-icon{
+      width:72px;
+      height:72px;
+      margin:0 auto 14px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      box-shadow:0 10px 18px rgba(0,0,0,.06);
+      font-size:34px;
+    }
+
+    .step-pill{
+      display:inline-block;
+      padding:10px 16px;
+      background:#3161ff;
+      color:#fff;
+      font-weight:800;
+      border-radius:999px;
+      font-size:16px;
+      margin-bottom:14px;
+    }
+
+    .step h4{
+      font-size:25px;
+      line-height:1.2;
+      margin:0 0 12px;
+      font-weight:900;
+    }
+
+    .step p{
+      margin:0;
+      color:#666f7b;
+      font-size:18px;
+      line-height:1.45;
+    }
+
+    .offer-box{
+      margin:54px auto 0;
+      max-width:980px;
+      border-radius:28px;
+      padding:46px 34px 42px;
+      color:#fff;
+      background:linear-gradient(180deg,#284a8c 0%, #081a37 100%);
+      box-shadow:0 24px 50px rgba(0,0,0,.12);
+      border:2px solid rgba(26,229,255,.45);
+      text-align:center;
+    }
+
+    .offer-mini{
+      display:inline-block;
+      padding:15px 28px;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:8px;
+      font-size:22px;
+      margin-bottom:26px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .offer-box h3{
+      font-size:64px;
+      line-height:1.04;
+      letter-spacing:-1.8px;
+      margin:0 0 22px;
+      font-weight:900;
+    }
+
+    .offer-product{
+      max-width:320px;
+      margin:0 auto 22px;
+      border-radius:22px;
+      overflow:hidden;
+    }
+
+    .offer-product img{
+      width:100%;
+      border-radius:22px;
+      box-shadow:0 18px 30px rgba(0,0,0,.18);
+    }
+
+    .offer-list{
+      max-width:720px;
+      margin:26px auto 30px;
+      text-align:left;
+      display:grid;
+      gap:0;
+    }
+
+    .offer-list div{
+      padding:16px 0;
+      border-bottom:1px solid rgba(255,208,82,.18);
+      font-size:26px;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+    }
+
+    .offer-list span{
+      color:#25ff4b;
+      font-weight:900;
+    }
+
+    .offer-urgency{
+      font-size:34px;
+      line-height:1.18;
+      max-width:720px;
+      margin:16px auto 26px;
+    }
+
+    .section-mini-title{
+      text-align:center;
+      font-size:64px;
+      line-height:1.04;
+      letter-spacing:-2px;
+      font-weight:900;
+      margin:0 0 10px;
+    }
+
+    .pill-danger{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:#ff3a31;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:999px;
+      font-size:18px;
+      font-weight:900;
+      box-shadow:0 10px 20px rgba(255,58,49,.18);
+    }
+
+    .bonus-grid{
+      margin-top:32px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .bonus-card{
+      background:#fff;
+      border:2px solid rgba(0,0,0,.12);
+      border-radius:26px;
+      padding:26px;
+      box-shadow:0 8px 22px rgba(0,0,0,.04);
+    }
+
+    .book-cover-wrap{
+      margin-bottom:22px;
+    }
+
+    .book-cover-wrap img{
+      width:100%;
+      max-width:300px;
+      margin:0 auto;
+      border-radius:12px;
+      box-shadow:0 16px 26px rgba(0,0,0,.12);
+      object-fit:cover;
+    }
+
+    .bonus-card h4{
+      font-size:24px;
+      line-height:1.4;
+      margin:0 0 16px;
+      font-weight:900;
+    }
+
+    .bonus-card p{
+      color:#535b67;
+      font-size:18px;
+      line-height:1.5;
+      margin:0 0 18px;
+    }
+
+    .free-tag{
+      background:#062a77;
+      color:#fff;
+      border-radius:12px;
+      padding:16px 18px;
+      text-align:center;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .free-tag .old{
+      color:#ff2d2d;
+      text-decoration:line-through;
+    }
+
+    .pricing-wrap{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .pricing-card{
+      background:#fff;
+      border:2px solid rgba(0,0,0,.12);
+      border-radius:24px;
+      padding:26px 24px 28px;
+      position:relative;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
+    }
+
+    .floating-tag{
+      position:absolute;
+      left:50%;
+      top:-20px;
+      transform:translateX(-50%);
+      background:#7fe36b;
+      color:#124111;
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:16px;
+      border:1px solid #2ea444;
+      white-space:nowrap;
+    }
+
+    .danger-badge{
+      background:#ff2d2d;
+      color:#fff;
+      border-radius:999px;
+      padding:15px 18px;
+      font-weight:900;
+      text-align:center;
+      font-size:18px;
+      margin:18px 0 18px;
+    }
+
+    .bonus-highlight{
+      text-align:center;
+      color:#13bf2d;
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .pricing-card h3{
+      text-align:center;
+      font-size:36px;
+      font-weight:900;
+      margin:8px 0 18px;
+    }
+
+    .pricing-media{
+      max-width:430px;
+      margin:0 auto 18px;
+    }
+
+    .pricing-media img{
+      width:100%;
+      border-radius:18px;
+      object-fit:contain;
+    }
+
+    .price-list{
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
+      display:grid;
+      gap:14px;
+    }
+
+    .price-list li{
+      font-size:20px;
+      line-height:1.4;
+      padding-bottom:14px;
+      border-bottom:1px solid #dfdfdf;
+    }
+
+    .on{
+      color:#0ba820;
+      font-weight:900;
+    }
+
+    .off{
+      color:#ef7878;
+      font-weight:900;
+    }
+
+    .old-price{
+      text-align:center;
+      color:#ff2020;
+      text-decoration:line-through;
+      font-size:30px;
+      margin:18px 0 8px;
+    }
+
+    .new-price{
+      text-align:center;
+      color:var(--green);
+      font-size:92px;
+      line-height:.95;
+      font-weight:900;
+      letter-spacing:-3px;
+      margin:0;
+    }
+
+    .installments{
+      text-align:center;
+      color:#555c68;
+      font-size:20px;
+      margin:14px 0 18px;
+    }
+
+    .economy{
+      text-align:center;
+      font-size:24px;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .economy b{
+      font-weight:900;
+    }
+
+    .payments{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .payments img{
+      max-width:220px;
+      width:100%;
+      object-fit:contain;
+      opacity:.88;
+    }
+
+    .guarantee{
+      display:grid;
+      grid-template-columns:460px 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .seal-wrap{
+      display:flex;
+      justify-content:center;
+    }
+
+    .seal-wrap img{
+      width:min(100%, 380px);
+      object-fit:contain;
+    }
+
+    .guarantee h3{
+      font-size:58px;
+      line-height:1.04;
+      letter-spacing:-1.5px;
+      margin:0 0 16px;
+      font-weight:900;
+    }
+
+    .guarantee p{
+      font-size:25px;
+      line-height:1.45;
+      color:#404854;
+      margin:0;
+      max-width:700px;
+    }
+
+    .testimonials-head h2{
+      text-align:center;
+      font-size:66px;
+      line-height:1.04;
+      margin:0 0 16px;
+      letter-spacing:-2px;
+      font-weight:900;
+    }
+
+    .testimonials-head p{
+      text-align:center;
+      color:#444c57;
+      font-size:22px;
+      margin:0 0 40px;
+    }
+
+    .testimonial-slider{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .slides{
+      display:flex;
+      transition:transform .4s ease;
+    }
+
+    .slide{
+      min-width:100%;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+    }
+
+    .testimonial{
+      padding:12px 6px 28px;
+      min-height:380px;
+    }
+
+    .stars{
+      color:#ffd400;
+      font-size:28px;
+      letter-spacing:3px;
+      margin-bottom:18px;
+    }
+
+    .testimonial blockquote{
+      margin:0 0 22px;
+      font-size:24px;
+      line-height:1.34;
+      color:#525862;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .testimonial-footer{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .testimonial-avatar{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      overflow:hidden;
+      background:#ddd;
+      flex:0 0 58px;
+    }
+
+    .testimonial-avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .testimonial strong{
+      display:block;
+      font-size:20px;
+      margin-bottom:6px;
+    }
+
+    .testimonial span{
+      color:#333;
+      font-size:18px;
+    }
+
+    .slider-controls{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:14px;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .dots{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:#c9c9c9;
+      border:none;
+      cursor:pointer;
+      padding:0;
+    }
+
+    .dot.active{
+      background:#111;
+    }
+
+    .navs{
+      display:flex;
+      gap:18px;
+      margin-left:auto;
+    }
+
+    .nav-btn{
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      background:transparent;
+      border:2px solid #151515;
+      cursor:pointer;
+      font-size:36px;
+      display:grid;
+      place-items:center;
+    }
+
+    .faq-wrap{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .faq-wrap h2{
+      text-align:center;
+      font-size:66px;
+      letter-spacing:-2px;
+      margin:0 0 28px;
+      font-weight:900;
+    }
+
+    .faq{
+      border-bottom:1px solid #4f545a;
+    }
+
+    .faq button{
+      width:100%;
+      border:none;
+      background:transparent;
+      text-align:left;
+      padding:28px 10px;
+      font-size:22px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      cursor:pointer;
+      color:#101419;
+    }
+
+    .faq .ans{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .28s ease;
+      color:#5a6270;
+      font-size:18px;
+      line-height:1.6;
+      padding:0 10px;
+    }
+
+    .faq.open .ans{
+      max-height:220px;
+      padding:0 10px 22px;
+    }
+
+    .faq button span:last-child{
+      font-weight:900;
+      font-size:26px;
+      min-width:24px;
+      text-align:right;
+    }
+
+    footer{
+      background:#030303;
+      color:#fff;
+      text-align:center;
+      padding:34px 16px 42px;
+    }
+
+    footer .copy{
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:28px;
+    }
+
+    footer p{
+      margin:0 auto 14px;
+      max-width:1200px;
+      color:#f1f1f1;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .divider-space{
+      height:18px;
+    }
+
+    /* Reveal animation */
+    .reveal{
+      opacity:0;
+      transform:translateY(34px);
+      transition:
+        opacity .65s ease,
+        transform .65s ease,
+        filter .65s ease;
+      filter:blur(4px);
+      will-change:opacity, transform, filter;
+    }
+
+    .reveal.in-view{
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0);
+    }
+
+    .reveal.fade-left{
+      transform:translateX(-38px);
+    }
+
+    .reveal.fade-left.in-view{
+      transform:translateX(0);
+    }
+
+    .reveal.fade-right{
+      transform:translateX(38px);
+    }
+
+    .reveal.fade-right.in-view{
+      transform:translateX(0);
+    }
+
+    .reveal.zoom-soft{
+      transform:translateY(22px) scale(.97);
+    }
+
+    .reveal.zoom-soft.in-view{
+      transform:translateY(0) scale(1);
+    }
+
+    @media (max-width: 1100px){
+      .hero h1,
+      .section-title,
+      .section-mini-title,
+      .testimonials-head h2,
+      .faq-wrap h2{
+        font-size:52px;
+        letter-spacing:-1.6px;
+      }
+
+      .hero-grid,
+      .guarantee,
+      .pricing-wrap,
+      .bonus-grid,
+      .split,
+      .slide{
+        grid-template-columns:1fr;
+      }
+
+      .steps-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .offer-box h3{
+        font-size:50px;
+      }
+
+      .cta-panel h3{
+        font-size:48px;
+      }
+
+      .new-price{
+        font-size:78px;
+      }
+
+      .guarantee{
+        text-align:center;
+      }
+
+      .guarantee p{
+        margin-inline:auto;
+      }
+
+      .seal-wrap img{
+        width:min(100%, 320px);
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{
+        width:min(100% - 24px, var(--container));
+      }
+
+      .topbar{
+        font-size:14px;
+        padding:10px 8px;
+      }
+
+      .hero{
+        padding:34px 0 34px;
+      }
+
+      .hero-grid{
+        gap:26px;
+      }
+
+      .hero h1{
+        font-size:34px;
+        line-height:1.05;
+        letter-spacing:-1.2px;
+      }
+
+      .hero p.lead{
+        font-size:19px;
+        line-height:1.5;
+      }
+
+      .badge{
+        font-size:13px;
+        padding:8px 12px;
+        margin-bottom:16px;
+      }
+
+      .cta{
+        width:100%;
+        min-height:64px;
+        padding:16px 18px;
+        font-size:18px;
+      }
+
+      .hero-note{
+        font-size:15px;
+        text-align:center;
+      }
+
+      .social-proof{
+        justify-content:center;
+        text-align:center;
+      }
+
+      .hero-media-card{
+        padding:12px;
+        border-radius:20px;
+      }
+
+      .section{
+        padding:52px 0;
+      }
+
+      .section-title,
+      .section-mini-title,
+      .testimonials-head h2,
+      .faq-wrap h2{
+        font-size:34px;
+        line-height:1.08;
+        letter-spacing:-1px;
+      }
+
+      .section-subtitle,
+      .testimonials-head p{
+        font-size:18px;
+        line-height:1.5;
+      }
+
+      .feature-card{
+        min-height:unset;
+        padding:24px 20px;
+      }
+
+      .feature-icon{
+        width:72px;
+        height:72px;
+        font-size:44px;
+      }
+
+      .feature-card h4{
+        font-size:18px;
+        line-height:1.5;
+      }
+
+      .count-text{
+        font-size:24px;
+        line-height:1.25;
+      }
+
+      .count-box{
+        min-width:64px;
+      }
+
+      .count-box strong{
+        font-size:42px;
+      }
+
+      .count-box span{
+        font-size:13px;
+      }
+
+      .cta-panel{
+        padding:34px 18px;
+        border-radius:22px;
+      }
+
+      .cta-panel h3{
+        font-size:34px;
+        line-height:1.08;
+      }
+
+      .check-item{
+        min-height:unset;
+        padding:16px 16px;
+        font-size:18px;
+        border-radius:18px;
+      }
+
+      .check-icon{
+        width:42px;
+        height:42px;
+        font-size:22px;
+        flex-basis:42px;
+      }
+
+      .steps-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+      }
+
+      .step h4{
+        font-size:22px;
+      }
+
+      .step p{
+        font-size:17px;
+      }
+
+      .offer-box{
+        padding:26px 18px 28px;
+        border-radius:22px;
+      }
+
+      .offer-mini{
+        font-size:16px;
+        padding:12px 14px;
+        margin-bottom:18px;
+      }
+
+      .offer-box h3{
+        font-size:34px;
+        line-height:1.08;
+      }
+
+      .offer-list div{
+        font-size:20px;
+        line-height:1.35;
+      }
+
+      .offer-urgency{
+        font-size:22px;
+        line-height:1.3;
+      }
+
+      .pill-danger{
+        font-size:16px;
+        padding:10px 18px;
+      }
+
+      .pricing-card h3{
+        font-size:30px;
+      }
+
+      .danger-badge{
+        font-size:16px;
+        padding:12px 12px;
+      }
+
+      .bonus-highlight{
+        font-size:18px;
+      }
+
+      .price-list li{
+        font-size:18px;
+      }
+
+      .old-price{
+        font-size:22px;
+      }
+
+      .new-price{
+        font-size:60px;
+        letter-spacing:-2px;
+      }
+
+      .installments{
+        font-size:18px;
+      }
+
+      .economy{
+        font-size:18px;
+      }
+
+      .floating-tag{
+        font-size:14px;
+        padding:10px 16px;
+      }
+
+      .guarantee h3{
+        font-size:34px;
+        letter-spacing:-1px;
+      }
+
+      .guarantee p{
+        font-size:19px;
+      }
+
+      .testimonial{
+        min-height:unset;
+        padding:8px 0 14px;
+      }
+
+      .testimonial blockquote{
+        font-size:18px;
+        letter-spacing:.7px;
+      }
+
+      .testimonial strong{
+        font-size:18px;
+      }
+
+      .testimonial span{
+        font-size:16px;
+      }
+
+      .nav-btn{
+        width:56px;
+        height:56px;
+        font-size:28px;
+      }
+
+      .faq button{
+        font-size:19px;
+        line-height:1.4;
+        padding:22px 6px;
+      }
+
+      footer .copy{
+        font-size:16px;
+      }
+
+      footer p{
+        font-size:14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar reveal">⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 14/04/2026</div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal fade-left">
+          <div class="badge">🔒 COMPRA 100% SEGURA E PROTEGIDA</div>
+
+          <h1>Construa Uma Fé Inabalável Nos Seus Filhos Antes Que Seja Tarde Demais</h1>
+
+          <p class="lead">
+            A série digital criada para ensinar crianças de 8 a 14 anos a
+            <b>PENSAR</b> a fé — não apenas repetir histórias bíblicas.
+          </p>
+
+          <a class="cta" href="#planos">QUERO GARANTIR O ACESSO COM DESCONTO</a>
+
+          <div class="hero-note">Você recebe tudo na hora, direto no seu ✉️ e-mail</div>
+
+          <div class="social-proof">
+            <div class="avatars">
+              <div class="avatar"><img src="depoimento-1.png" alt="Cliente 1"></div>
+              <div class="avatar"><img src="depoimento-2.png" alt="Cliente 2"></div>
+              <div class="avatar"><img src="depoimento-3.png" alt="Cliente 3"></div>
+              <div class="avatar"><img src="depoimento-4.png" alt="Cliente 4"></div>
+            </div>
+            <strong>MAIS DE 1.000 FAMÍLIAS!</strong>
+          </div>
+        </div>
+
+        <div class="hero-media-card reveal fade-right">
+          <img src="hero-produto.png" alt="Mockup do produto Descobrindo o Porquê da Fé">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2 class="section-title">
+        Cada lição é pensada para fazer a criança descobrir a verdade sozinha, criando conexões profundas e duradouras.
+      </h2>
+
+      <div class="preview-wrap reveal zoom-soft">
+        <img class="preview-image" src="preview-material.png" alt="Prévia do material">
+      </div>
+
+      <h3 class="section-mini-title reveal" style="margin-top:60px">
+        Você receberá um<br><span class="blue-word">material único</span>
+      </h3>
+
+      <div class="split">
+        <div class="feature-card reveal fade-left">
+          <div class="feature-icon">📚</div>
+          <h4>13 livros digitais com uma jornada de 52 semanas</h4>
+        </div>
+
+        <div class="feature-card reveal fade-right">
+          <div class="feature-icon">📱</div>
+          <h4>Acesso em celular, tablet ou computador</h4>
+        </div>
+
+        <div class="feature-card reveal fade-left">
+          <div class="feature-icon">🖨️</div>
+          <h4>Possibilidade de impressão, se a família desejar</h4>
+        </div>
+
+        <div class="feature-card reveal fade-right">
+          <div class="feature-icon">💡</div>
+          <h4>Ritmo flexível, pensado para uso semanal</h4>
+        </div>
+      </div>
+
+      <div class="simple-center reveal">Um Material Que Vai Muito Além da Escola Dominical</div>
+    </div>
+
+    <div class="count-strip reveal">
+      <div class="container count-inner">
+        <div class="count-text">APROVEITE O PREÇO PROMOCIONAL POR TEMPO LIMITADO</div>
+
+        <div class="count-boxes">
+          <div class="count-box">
+            <strong id="minutes">15</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="count-box">
+            <strong id="seconds">00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:54px">
+    <div class="container">
+      <div class="cta-panel reveal zoom-soft">
+        <h3>
+          Aqui, seu filho não aprende apenas o que acreditar, mas por que acreditar.
+        </h3>
+        <a class="cta" href="#planos">QUERO GARANTIR O ACESSO</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:26px">
+    <div class="container">
+      <h2 class="section-title">Este Material É Ideal Para Você Que Deseja:</h2>
+
+      <div class="list-ideal">
+        <div class="check-item reveal fade-left"><div class="check-icon">✔</div>Prevenir o abandono da fé no futuro</div>
+        <div class="check-item reveal fade-right"><div class="check-icon">✔</div>Ajudar seu filho a responder dúvidas difíceis</div>
+        <div class="check-item reveal fade-left"><div class="check-icon">✔</div>Desenvolver pensamento cristão profundo</div>
+        <div class="check-item reveal fade-right"><div class="check-icon">✔</div>Ir além da Escola Dominical tradicional</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:20px">
+    <div class="container">
+      <h2 class="section-title">Como Aplicar o Método No Dia a Dia Do Seu Filho</h2>
+      <p class="section-subtitle">Simples, prático e direto ao ponto.</p>
+
+      <div class="steps-grid">
+        <div class="step reveal fade-left">
+          <div class="step-icon">📚</div>
+          <div class="step-pill">PASSO 01</div>
+          <h4>Estudo guiado</h4>
+          <p>Seu filho aprende no ritmo dele, com lições curtas e objetivas.</p>
+        </div>
+
+        <div class="step reveal zoom-soft">
+          <div class="step-icon">💬</div>
+          <div class="step-pill">PASSO 02</div>
+          <h4>Conversas Naturais</h4>
+          <p>As perguntas do material geram diálogos profundos em casa.</p>
+        </div>
+
+        <div class="step reveal zoom-soft">
+          <div class="step-icon">🧠</div>
+          <div class="step-pill">PASSO 03</div>
+          <h4>Pensamento crítico cristão</h4>
+          <p>Ele aprende a avaliar ideias, dúvidas e questionamentos.</p>
+        </div>
+
+        <div class="step reveal fade-right">
+          <div class="step-icon">🙏</div>
+          <div class="step-pill">PASSO 04</div>
+          <h4>Fé aplicada à vida real</h4>
+          <p>A fé deixa de ser abstrata e passa a fazer sentido.</p>
+        </div>
+      </div>
+
+      <div class="offer-box reveal zoom-soft">
+        <div class="offer-mini">🚨 Oferta Limitada Apenas Hoje</div>
+
+        <h3>
+          Série "Descobrindo o Porquê da Fé" – 52 semanas de teologia sistemática para crianças
+        </h3>
+
+        <div class="offer-product">
+          <img src="hero-produto.png" alt="Produto principal">
+        </div>
+
+        <div style="font-size:22px;opacity:.88;margin-bottom:10px">Seus filhos terão:</div>
+
+        <div class="offer-list">
+          <div><span>✓</span> Base teológica sólida</div>
+          <div><span>✓</span> Clareza intelectual</div>
+          <div><span>✓</span> Segurança para responder questionamentos</div>
+          <div><span>✓</span> Fundamento para a adolescência</div>
+        </div>
+
+        <div class="offer-urgency">
+          Essa oferta está disponível para as próximas 7 famílias. Depois disso, o preço será ajustado.
+        </div>
+
+        <a class="cta" href="#planos">GARANTIR ACESSO COM DESCONTO</a>
+        <div class="hero-note">Você recebe tudo na hora, direto no seu ✉️ e-mail</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:10px">
+    <div class="container">
+      <h2 class="section-mini-title">E não para por aí...<br>Tem mais!</h2>
+      <p class="section-subtitle" style="margin-bottom:20px">Você também vai receber</p>
+
+      <div style="text-align:center;margin-bottom:34px" class="reveal">
+        <span class="pill-danger">🔥 3 BÔNUS EXCLUSIVOS</span>
+      </div>
+
+      <div class="bonus-grid">
+        <div class="bonus-card reveal fade-left">
+          <div class="book-cover-wrap">
+            <img src="bonus-pais-pensadores.png" alt="Bônus Guia dos Pais Pensadores">
+          </div>
+          <h4>🎁 Bônus #1 Guia dos Pais Pensadores</h4>
+          <p>
+            Um guia exclusivo para pais que ensina como lidar com perguntas difíceis sobre fé sem pânico,
+            respostas prontas ou conflitos, ajudando a transformar dúvidas em conversas construtivas dentro de casa.
+          </p>
+          <div class="free-tag">Valor: <span class="old">R$47</span> GRÁTIS</div>
+        </div>
+
+        <div class="bonus-card reveal zoom-soft">
+          <div class="book-cover-wrap">
+            <img src="bonus-erros-comuns.png" alt="Bônus Manual de Erros Comuns">
+          </div>
+          <h4>🎁 Bônus #2 Manual de Erros Comuns que Enfraquecem a Fé Infantil</h4>
+          <p>
+            Um material direto que mostra atitudes comuns, porém prejudiciais, que muitos pais cometem sem perceber —
+            e como ajustá-las para proteger o desenvolvimento de uma fé mais madura e consciente.
+          </p>
+          <div class="free-tag">Valor: <span class="old">R$47</span> GRÁTIS</div>
+        </div>
+
+        <div class="bonus-card reveal fade-right">
+          <div class="book-cover-wrap">
+            <img src="bonus-transicao.png" alt="Bônus Guia de Transição">
+          </div>
+          <h4>🎁 Bônus #3 Guia de Transição: Dos 14 para os 18 Anos</h4>
+          <p>
+            Um guia estratégico para pais entenderem as mudanças cognitivas e emocionais da adolescência final
+            e aprenderem como apoiar os filhos nessa fase crítica sem controle excessivo, medo ou pressão.
+          </p>
+          <div class="free-tag">Valor: <span class="old">R$47</span> GRÁTIS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="planos" style="padding-top:16px">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:16px" class="reveal">
+        <span class="pill-danger">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</span>
+      </div>
+
+      <h2 class="section-mini-title">
+        Escolha o Melhor <span class="blue-word">Plano para Você!</span>
+      </h2>
+
+      <div class="divider-space"></div>
+
+      <div class="pricing-wrap">
+        <div class="pricing-card reveal fade-left">
+          <h3>Plano básico</h3>
+
+          <div class="pricing-media">
+            <img src="hero-produto.png" alt="Plano básico">
+          </div>
+
+          <ul class="price-list">
+            <li><span class="on">✓</span> Série "Descobrindo o Porquê da Fé" – 52 semanas de teologia sistemática para crianças</li>
+            <li><span class="off">•</span> Guia dos Pais Pensadores</li>
+            <li><span class="off">•</span> Manual de Erros Comuns que Enfraquecem a Fé Infantil</li>
+            <li><span class="off">•</span> Guia de Transição: Dos 14 para os 18 Anos</li>
+          </ul>
+
+          <div class="old-price">de R$74,00 por:</div>
+          <p class="new-price">R$47,90</p>
+          <div class="installments">ou 12x de R$4,89 no cartão</div>
+          <div class="economy">• Você economiza <b>R$26,10</b></div>
+
+          <a class="cta green small" href="#">GARANTIR A BASE DA FÉ DO MEU FILHO AGORA</a>
+
+          <div class="payments">
+            <img src="logo-pagamentos.png" alt="Formas de pagamento">
+          </div>
+        </div>
+
+        <div class="pricing-card reveal fade-right">
+          <div class="floating-tag">⚡ MAIS VENDIDO</div>
+          <div class="danger-badge">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</div>
+          <div class="bonus-highlight">Todos os bônus inclusos</div>
+
+          <h3>Plano Completo</h3>
+
+          <div class="pricing-media">
+            <img src="hero-produto.png" alt="Plano completo">
+          </div>
+
+          <div style="border:2px solid #7fd466;color:#20b934;border-radius:999px;padding:12px 20px;text-align:center;font-size:18px;font-weight:800;margin-bottom:18px">
+            ⚡ 2x mais conteúdos
+          </div>
+
+          <ul class="price-list">
+            <li><span class="on">✓</span> Série "Descobrindo o Porquê da Fé" – 52 semanas de teologia sistemática para crianças</li>
+            <li><span class="on">✓</span> 🎁 <b>Bônus #1</b> Guia dos Pais Pensadores</li>
+            <li><span class="on">✓</span> 🎁 <b>Bônus #2</b> Manual de Erros Comuns</li>
+            <li><span class="on">✓</span> 🎁 <b>Bônus #3</b> Guia de Transição: Dos 14 para os 18 Anos</li>
+          </ul>
+
+          <div class="old-price">de R$147,00 por:</div>
+          <p class="new-price">R$67,90</p>
+          <div class="installments">ou 12x de R$6,93 no cartão</div>
+          <div class="economy">• Você economiza <b>R$79,10</b></div>
+
+          <a class="cta green small" href="#">GARANTIR A BASE DA FÉ DO MEU FILHO AGORA</a>
+
+          <div class="payments">
+            <img src="logo-pagamentos.png" alt="Formas de pagamento">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container guarantee">
+      <div class="seal-wrap reveal fade-left">
+        <img src="garantia-90-dias.png" alt="Garantia de 90 dias">
+      </div>
+
+      <div class="reveal fade-right">
+        <h3>Garantia de 90 dias</h3>
+        <p>
+          Você tem 90 dias para testar a metodologia. Se por algum motivo você perceber que não é para você,
+          nós devolvemos integralmente o seu investimento, sem questionamentos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:24px">
+    <div class="container">
+      <div class="testimonials-head reveal">
+        <h2>Veja o que nossos clientes estão dizendo</h2>
+        <p>Leia os depoimentos de quem já tomou a decisão certa.</p>
+      </div>
+
+      <div class="testimonial-slider reveal">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “MEU FILHO SEMPRE FEZ PERGUNTAS DIFÍCEIS, E EU FICAVA SEM SABER O QUE RESPONDER.
+                ESSE MATERIAL NÃO ME DEU RESPOSTAS PRONTAS — ELE ME ENSINOU A CONVERSAR MELHOR
+                COM MEU FILHO. HOJE ELE NÃO SÓ PERGUNTA MAIS, COMO CONSEGUE EXPLICAR POR QUE ACREDITA.
+                ISSO MUDOU COMPLETAMENTE NOSSAS CONVERSAS EM CASA.”
+              </blockquote>
+              <div class="testimonial-footer">
+                <div class="testimonial-avatar">
+                  <img src="ana.png" alt="Ana Paula">
+                </div>
+                <div>
+                  <strong>Ana Paula R.</strong>
+                  <span>Mãe de um menino de 9 anos</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “PERCEBI QUE EU ESTAVA ENSINANDO MEU FILHO A REPETIR FRASES, NÃO A PENSAR.
+                A JORNADA ME AJUDOU A CORRIGIR ISSO. NÃO FOI ALGO IMEDIATO, MAS AO LONGO DAS
+                SEMANAS VI MEU FILHO FICANDO MAIS CONFIANTE PARA FALAR DA FÉ SEM FICAR DEFENSIVO.”
+              </blockquote>
+              <div class="testimonial-footer">
+                <div class="testimonial-avatar">
+                  <img src="ricardo.png" alt="Ricardo">
+                </div>
+                <div>
+                  <strong>Ricardo M.</strong>
+                  <span>Pai de um menino de 11 anos</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “SEMPRE TIVE MEDO DAS DÚVIDAS DA MINHA FILHA. ACHAVA QUE ISSO SIGNIFICAVA QUE ELA ESTAVA
+                SE AFASTANDO. HOJE ENTENDO QUE AS PERGUNTAS FAZEM PARTE DO CRESCIMENTO. O MATERIAL TROUXE
+                MAIS CALMA E PROFUNDIDADE PARA NOSSA RELAÇÃO.”
+              </blockquote>
+              <div class="testimonial-footer">
+                <div class="testimonial-avatar">
+                  <img src="juliana.png" alt="Juliana">
+                </div>
+                <div>
+                  <strong>Juliana S.</strong>
+                  <span>Mãe solo</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="slide">
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “O QUE MAIS GOSTAMOS FOI O RITMO. UMA PERGUNTA POR SEMANA, SEM PRESSÃO.
+                NÃO PARECE AULA, PARECE CONVERSA. NOSSO FILHO COMEÇOU A CONECTAR A FÉ
+                COM A VIDA REAL, NÃO SÓ COM HISTÓRIAS BÍBLICAS.”
+              </blockquote>
+              <div class="testimonial-footer">
+                <div class="testimonial-avatar">
+                  <img src="marcosdani.png" alt="Marcos e Daniela">
+                </div>
+                <div>
+                  <strong>Marcos e Daniela T.</strong>
+                  <span>Pais de um menino de 12 anos</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “TRABALHO COM CRIANÇAS HÁ ANOS E VEJO MUITAS COM FÉ DECORADA, MAS FRÁGIL.
+                ESSE PROJETO SE DIFERENCIA PORQUE ENSINA O ‘POR QUÊ’, NÃO APENAS O ‘O QUÊ’.
+                É UM MATERIAL QUE RESPEITA O DESENVOLVIMENTO DA CRIANÇA.”
+              </blockquote>
+              <div class="testimonial-footer">
+                <div class="testimonial-avatar">
+                  <img src="fernanda.png" alt="Fernanda">
+                </div>
+                <div>
+                  <strong>Fernanda L.</strong>
+                  <span>Educadora cristã</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                “AQUI EM CASA O MAIOR GANHO FOI A QUALIDADE DAS CONVERSAS. PAROU DE SER UM MONÓLOGO
+                DOS PAIS E VIROU UMA CONSTRUÇÃO EM FAMÍLIA. ISSO FEZ MUITA DIFERENÇA NO RELACIONAMENTO
+                COM NOSSOS FILHOS.”
+              </blockquote>
+              <div class="testimonial-footer">
+                <div class="testimonial-avatar">
+                  <img src="pauloecintia.png" alt="Paulo e Cíntia">
+                </div>
+                <div>
+                  <strong>Paulo e Cíntia A.</strong>
+                  <span>Pais de duas crianças</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls reveal">
+        <div class="dots" id="dots"></div>
+
+        <div class="navs">
+          <button class="nav-btn" id="prev" aria-label="Anterior">←</button>
+          <button class="nav-btn" id="next" aria-label="Próximo">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:16px">
+    <div class="container">
+      <div class="faq-wrap">
+        <h2 class="reveal">Perguntas Frequentes</h2>
+
+        <div class="faq reveal">
+          <button type="button"><span>Isso é um curso de teologia?</span><span>+</span></button>
+          <div class="ans">
+            Não no formato acadêmico tradicional. É uma jornada guiada para crianças, construída para formar base teológica sólida de maneira acessível, prática e apropriada para a idade.
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <button type="button"><span>É necessário seguir uma ordem ou calendário?</span><span>+</span></button>
+          <div class="ans">
+            O ideal é seguir a sequência proposta, porque ela foi pensada em progressão pedagógica. Ainda assim, a família pode adaptar o ritmo conforme a rotina semanal.
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <button type="button"><span>Isso substitui a igreja ou a escola bíblica?</span><span>+</span></button>
+          <div class="ans">
+            Não. O material funciona como complemento para fortalecer as conversas em casa e aprofundar a formação da fé no ambiente familiar.
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <button type="button"><span>O conteúdo é todo digital?</span><span>+</span></button>
+          <div class="ans">
+            Sim. O acesso é digital e imediato após a compra. Você pode usar no celular, tablet ou computador, e também imprimir partes específicas se desejar.
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <button type="button"><span>O acesso é por quanto tempo?</span><span>+</span></button>
+          <div class="ans">
+            O acesso é liberado para consulta contínua dentro da área de membros, conforme as condições informadas no checkout.
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <button type="button"><span>Posso acessar pelo celular?</span><span>+</span></button>
+          <div class="ans">
+            Sim. A página e o conteúdo foram pensados para funcionar bem em celular, tablet e desktop.
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <button type="button"><span>E se eu não gostar do curso?</span><span>+</span></button>
+          <div class="ans">
+            Você conta com garantia de 90 dias. Se sentir que o material não faz sentido para sua família, o valor pode ser solicitado de volta dentro do prazo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="reveal">
+    <div class="copy">Copyright © 2026 | Todos os direitos reservados.</div>
+    <p>Este site não é afiliado ao Facebook, Instagram ou Meta.</p>
+    <p>
+      Cada família vive uma realidade diferente, por isso os resultados podem variar.
+      O conteúdo apresentado tem caráter educativo e não garante resultados específicos.
+      Os relatos compartilhados refletem experiências reais de pessoas que utilizaram o material.
+    </p>
+  </footer>
+
+  <script>
+    // CONTADOR
+    (function(){
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      let total = 15 * 60;
+
+      function render(){
+        const min = Math.floor(total / 60);
+        const sec = total % 60;
+        minutesEl.textContent = String(min).padStart(2, '0');
+        secondsEl.textContent = String(sec).padStart(2, '0');
+      }
+
+      render();
+
+      setInterval(() => {
+        total--;
+        if (total < 0) total = 15 * 60;
+        render();
+      }, 1000);
+    })();
+
+    // FAQ
+    (function(){
+      const faqs = document.querySelectorAll('.faq');
+
+      faqs.forEach((faq) => {
+        const btn = faq.querySelector('button');
+
+        btn.addEventListener('click', () => {
+          const isOpen = faq.classList.contains('open');
+
+          faqs.forEach((item) => {
+            item.classList.remove('open');
+            item.querySelector('button span:last-child').textContent = '+';
+          });
+
+          if (!isOpen) {
+            faq.classList.add('open');
+            btn.querySelector('span:last-child').textContent = '−';
+          }
+        });
+      });
+    })();
+
+    // SLIDER DE DEPOIMENTOS
+    (function(){
+      const slides = document.getElementById('slides');
+      const slideItems = document.querySelectorAll('.slide');
+      const dotsWrap = document.getElementById('dots');
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      let index = 0;
+
+      function update(){
+        slides.style.transform = `translateX(-${index * 100}%)`;
+
+        [...dotsWrap.children].forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+
+      slideItems.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Ir para slide ' + (i + 1));
+        dot.addEventListener('click', () => {
+          index = i;
+          update();
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      prev.addEventListener('click', () => {
+        index = (index - 1 + slideItems.length) % slideItems.length;
+        update();
+      });
+
+      next.addEventListener('click', () => {
+        index = (index + 1) % slideItems.length;
+        update();
+      });
+
+      setInterval(() => {
+        index = (index + 1) % slideItems.length;
+        update();
+      }, 7000);
+    })();
+
+    // FADE IN / FADE OUT NO SCROLL
+    (function(){
+      const reveals = document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, {
+        threshold: 0.14,
+        rootMargin: '0px 0px -6% 0px'
+      });
+
+      reveals.forEach((item) => observer.observe(item));
+    })();
+  </script>
+</body>
+</html>
